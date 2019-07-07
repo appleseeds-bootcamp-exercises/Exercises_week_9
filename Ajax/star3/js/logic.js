@@ -15,15 +15,15 @@ const updateAirCon = () => {
     });
 }
 const updateAirConImage = (response) => {
-    $("#airConState").html(response.mode ? '<img class="icon" src="images/Snowflake.png">'
+    $("#airConState").html(response.state === "on" ? '<img class="icon" src="images/Snowflake.png">'
         : '<img class="icon" src="images/off.png">' || "")
-    $("#airConMode").html(response.state)
+    $("#airConMode").html(response.mode || "")
     $("#airConTemp").html(response.temp || "")
 }
 
 $(document).ready(
     () => {
         updateAirCon()
-        setInterval(updateAirCon, 10000)
+        setInterval(updateAirCon, 1000)
     }
 );
