@@ -1,6 +1,8 @@
 def find_max(a_list, index):
-    if index >= len(a_list):
+    if(len(a_list) == 0):
         return 0
+    if index >= len(a_list) - 1:
+        return a_list[index]
     next_max = find_max(a_list, index + 1)
     if next_max > a_list[index]:
         return next_max
