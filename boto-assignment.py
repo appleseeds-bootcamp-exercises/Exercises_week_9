@@ -60,7 +60,7 @@ while will_more_questions:
 
 print("Hope you had fun playing")
 print(
-    f'Your score is: {100* correct_answers/(correct_answers + len(wrong_answers))}%'
+    f'Your score is: {int(100* correct_answers/(correct_answers + len(wrong_answers)))}%'
 )
 print("Questions you answered wrong: ")
 for a in wrong_answers:
