@@ -8,7 +8,7 @@ class Game:
         self.num_correct_answers = 0
 
     def play(self):
-        print("Hello and welcome to our math game \nYou will be required to answer basic math problems. I hope you are ready")
+        print("Hello and welcome to our math game \nYou will be required to answer basic math problemsת I hope you are ready !")
         self.ask_math_question()
         success_rate = int(100 * self.num_correct_answers /
                            (self.num_correct_answers + len(self.unsolved_problems)))
@@ -67,4 +67,5 @@ class Game:
         return self.will_another_problem()
 
 
-Game().play()
+if __name__ == "__main__":
+    Game().play()
