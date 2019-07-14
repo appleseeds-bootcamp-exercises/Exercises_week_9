@@ -8,21 +8,16 @@ class Game:
         self.num_correct_answers = 0
 
     def play(self):
-        print("Hello and welcome to our math game")
-        print(
-            "You will be required to answer basic math problems. I hope you are ready"
-        )
+        print("Hello and welcome to our math game \nYou will be required to answer basic math problems. I hope you are ready")
         self.ask_math_question()
-        print("Hope you had fun playing!!")
         success_rate = int(100 * self.num_correct_answers /
                            (self.num_correct_answers + len(self.unsolved_problems)))
         print(
-            f'Your score is: {success_rate}%'
+            f'Hope you had fun playing!! \nYour score is: {success_rate}%'
         )
         if len(self.unsolved_problems) > 0:
-            print("Questions you answered wrong: ")
-            for a in self.unsolved_problems:
-                print(a)
+            print("Questions you answered wrong: \n" + '\n'.join([
+                  q for q in self.unsolved_problems]))
         print("See you next time!")
 
     def generate_math_problem(self):
@@ -50,7 +45,7 @@ class Game:
             print(random.choice(
                 ["Sorry mate :/ ", "You can do better!", "Try harder next time, ok?"]))
             self.unsolved_problems.append(
-                f'{problem["question"]} {user_answer} ({str(problem["correct_answer"])})'
+                f'{problem["question"]} {user_answer} ({problem["correct_answer"]})'
             )
         if self.will_another_problem():
             self.ask_math_question()
